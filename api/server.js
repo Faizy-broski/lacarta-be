@@ -6,8 +6,11 @@ import authRoutes from "../src/routes/authRoutes.js";
 import hotelBookingRoutes from "../src/routes/hotelBookingRoutes.js";
 import activityRoutes from "../src/routes/activityRoutes.js";
 import categoryRoutes from "../src/routes/categoryRoutes.js";
-import restaurantRoutes from "./routes/restaurantRoutes.js";
-
+import restaurantRoutes from "../src/routes/restaurantRoutes.js";
+import gastronomyRoutes from "../src/routes/gastronomyRoutes.js";
+import boatingRoutes from "../src/routes/boatingRoutes.js";
+import tourRoutes from "../src/routes/tourRoutes.js";
+import searchRoutes from '../src/routes/searchRoutes.js'
 
 
 dotenv.config();
@@ -20,6 +23,10 @@ app.use("/api/hotels", hotelBookingRoutes);
 app.use("/api/activities", activityRoutes);
 app.use("/api/categories", categoryRoutes);
 app.use("/api/restaurants", restaurantRoutes);
+app.use("/api/gastronomy", gastronomyRoutes);
+app.use("/api/boats", boatingRoutes);
+app.use("/api/tours", tourRoutes);
+app.use("/api/search", searchRoutes);
 
 
 const PORT = process.env.PORT || 3000;

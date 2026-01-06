@@ -52,4 +52,14 @@ const hotelBookingSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-export default mongoose.model("HotelBooking", hotelBookingSchema);
+hotelBookingSchema.index({
+  title: "text",
+  description: "text",
+  category: "text",
+  location: "text",
+});
+
+const HotelBooking =
+  mongoose.models.HotelBooking || mongoose.model("HotelBooking", hotelBookingSchema);
+
+export default HotelBooking;

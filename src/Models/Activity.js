@@ -31,4 +31,14 @@ const activitySchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-export default mongoose.model("Activity", activitySchema);
+activitySchema.index({
+  title: "text",
+  description: "text",
+  category: "text",
+  location: "text",
+});
+
+const Activity =
+  mongoose.models.Activity || mongoose.model("Activity", activitySchema);
+
+export default Activity

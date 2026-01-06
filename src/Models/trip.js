@@ -28,4 +28,14 @@ const tripSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-export default mongoose.model("Trip", tripSchema);
+tripSchema.index({
+  title: "text",
+  description: "text",
+  category: "text",
+  location: "text",
+});
+
+const Trip =
+  mongoose.models.Trip || mongoose.model("Trip", tripSchema);
+
+export default Trip
