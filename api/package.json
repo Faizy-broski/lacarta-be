@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "build": "rimraf dist && copyfiles -u 1 \"src/*/\" dist"
   },
   "keywords": [],
   "author": "",
@@ -31,5 +32,9 @@
     "nodemailer": "^7.0.12",
     "xss-clean": "^0.1.4",
     "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "copyfiles": "^2.4.1",
+    "rimraf": "^6.1.3"
   }
 }
